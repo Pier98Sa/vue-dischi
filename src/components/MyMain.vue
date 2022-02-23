@@ -5,7 +5,7 @@
         <CoverAlbum
           v-for="(album, index) in listaAlbum"
           :key="index"
-          :album="album"
+          :album="album"     
         />
 
       </div>

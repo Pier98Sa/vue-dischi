@@ -1,5 +1,5 @@
 <template>
-    <div class="col p-3" >
+    <div class="col g-4" >
         <div class="box d-flex flex-column  ">
             <div class="cover p-3">
                 <img class="img-fluid" :src="album.poster">
