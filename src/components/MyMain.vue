@@ -1,12 +1,11 @@
 <template>
   <main>
-    <div class="container pt-5">
-      <div class="row">
-        <CoverAlbum
-          v-for="(album, index) in listaAlbum"
-          :key="index"
-          :album="album"     
-        />
+    <div class="container py-5">
+      <div class="row row-cols-5 ">
+        <div class="col g-4" v-for="(album, index) in listaAlbum" :key="index">
+          <CoverAlbum :album="album"/>
+        </div>
+        
 
       </div>
 
@@ -50,12 +49,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  @import '../style/variables.scss';
-    main{
-      background-color: $secondaryColor;
-      height: calc(100vh - 100px);
-      overflow-y: auto;
-    }
+@import '../style/variables.scss';
+  main{
+    background-color: $secondaryColor;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
 
 
 </style>

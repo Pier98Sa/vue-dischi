@@ -1,20 +1,19 @@
 <template>
-    <div class="col g-4" >
-        <div class="box d-flex flex-column  ">
-            <div class="cover p-3">
-                <img class="img-fluid" :src="album.poster">
-            </div>
+    
+    <div class="box d-flex flex-column ">
+        <div class="cover p-3">
+            <img class="img-fluid" :src="album.poster">
+        </div>
 
-            <div class="cover-text text-center">
-                <h2 class="text-white text-uppercase fs-4 p-3">{{album.title}}</h2>
-                <div class="ms_color-text">{{album.author}}</div>
-                <div class="ms_color-text">{{album.year}}</div>
-            </div>
-            
-            
+        <div class="cover-text text-center p-2">
+            <h2 class="text-white text-uppercase fs-4 p-3">{{album.title}}</h2>
+            <div class="ms_color-text">{{album.author}}</div>
+            <div class="ms_color-text">{{album.year}}</div>
         </div>
         
     </div>
+    
+    
   
 </template>
 
@@ -32,8 +31,7 @@ export default {
 @import '../../style/variables.scss';
 
 .box{
-    width: 200px;
-    height: 360px;
+    height: 100%;
     background-color: $primaryColor;
 
     .cover{
