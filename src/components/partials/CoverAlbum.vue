@@ -5,10 +5,13 @@
             <img class="img-fluid" :src="album.poster">
         </div>
 
-        <div class="cover-text text-center p-2">
+        <div class="cover-text text-center p-2 d-flex flex-column justify-content-between">
             <h2 class="text-white text-uppercase fs-4 p-3">{{album.title}}</h2>
-            <div class="ms_color-text">{{album.author}}</div>
-            <div class="ms_color-text">{{album.year}}</div>
+            <div class="singer-year">
+                <h3 class="ms_color-text fs-6">{{album.author}}</h3>
+                <h3 class="ms_color-text fs-6">{{album.year}}</h3>
+            </div>
+            
         </div>
         
     </div>
@@ -34,13 +37,6 @@ export default {
     height: 100%;
     background-color: $primaryColor;
 
-    .cover{
-        height: 50%;
-    }
-
-    .cover-text{
-        height: 50%;
-    }
 
     .ms_color-text{
         color: $tertiaryColor;
