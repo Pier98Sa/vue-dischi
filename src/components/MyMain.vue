@@ -27,6 +27,7 @@ export default {
   data(){
     return{
       listaAlbum: [],
+      listaGeneri: ["All"],
       loadingInProgress: true,
       api: "https://flynn.boolean.careers/exercises/api/array/music"
     }
@@ -39,13 +40,28 @@ export default {
     getAlbum(){
       axios.get(this.api)
       .then((response) => {
+        //popolamento dell'array listaAlbum
         this.listaAlbum = response.data.response;
         this.loadingInProgress = false;
+        //popolamento dell'array listaGeneri
+        this.listaAlbum.forEach((album) => {
+          if(!this.listaGeneri.includes(album.genre)){
+            this.listaGeneri.push(album.genre);
+          }
+        });
+
+        this.$emit('Generi',this.listaGeneri)
       });
-    }
+    },
+
+    
+      
+   
   },
   created(){
       this.getAlbum();
+      console.log(this.listaGeneri)
+      
   }
   
 }

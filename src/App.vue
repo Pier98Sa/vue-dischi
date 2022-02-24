@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    
-    <MyHeader />
+    <MyHeader @Generi ="generazioneSelect"/>
     <MyMain />
   </div>
 </template>
@@ -16,6 +15,11 @@ export default {
     MyHeader,
     MyMain,
     
+  },
+  methods:{
+    generazioneSelect(){
+      
+    }
   }
 }
 </script>

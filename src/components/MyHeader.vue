@@ -1,6 +1,9 @@
 <template>
-  <header class="d-flex align-items-center">
+  <header class="d-flex align-items-center justify-content-between">
     <img class="img-fluid p-2" alt="spotify logo" src="../assets/Spotify_Logo.png">
+    <select class="form-select me-2 ms_w-15" name="genresSelect" id="Album-Select">
+
+    </select>
   </header>
 </template>
 
@@ -22,7 +25,12 @@ export default {
     img{
       height: 80px;
     }
+
+    
   }
 
+  .ms_w-15{
+    width: 15%;;
+  }
 
 </style>
