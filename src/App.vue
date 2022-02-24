@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MyHeader @Generi ="generazioneSelect"/>
-    <MyMain />
+    <MyHeader :selezioni="arraygeneri" @genreSelected="genre"/>
+    <MyMain @generi="generazioneSelect" :genere="genereSelezionato"/>
   </div>
 </template>
 
@@ -11,14 +11,25 @@ import MyMain from './components/MyMain.vue'
 
 export default {
   name: 'App',
+  data (){
+    return {
+      arraygeneri:[],
+      genereSelezionato:"Select genre",
+    }
+  },
   components: {
     MyHeader,
     MyMain,
     
   },
   methods:{
-    generazioneSelect(){
-      
+    generazioneSelect(generi){
+      this.arraygeneri = generi;
+      console.log(this.arraygeneri);
+    },
+    genre(select){
+      this.genereSelezionato = select;
+      console.log("mi trovo nel app e ho la select" + this.genereSelezionato);
     }
   }
 }

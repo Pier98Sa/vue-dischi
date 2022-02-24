@@ -2,7 +2,7 @@
   <main>
     <div class="container py-5">
       <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 ">
-        <div class="col g-4" v-for="(album, index) in listaAlbum" :key="index">
+        <div class="col g-4" v-for="(album, index) in listaAlbumFiltrati" :key="index">
           <CoverAlbum :album="album"/>
         </div>
         
@@ -24,10 +24,14 @@ import PageLoad from './PageLoad.vue'
 
 export default {
   name: 'MyMain',
+  props:{
+    genere: String,
+  },
   data(){
     return{
       listaAlbum: [],
-      listaGeneri: ["All"],
+      listaFiltrata: [],
+      listaGeneri: ["Select genre"],
       loadingInProgress: true,
       api: "https://flynn.boolean.careers/exercises/api/array/music"
     }
@@ -36,6 +40,20 @@ export default {
     CoverAlbum,
     PageLoad
   },
+  computed: {
+    listaAlbumFiltrati(){
+      if(this.genere == "Select genre"){
+        return this.listaAlbum;
+      }else {
+        return this.listaAlbum.filter((elemento) =>{
+          if(elemento.genre == this.genere){
+           return this.listaFiltrata.push(elemento);
+          }
+        });
+      } 
+   },
+},
+
   methods:{
     getAlbum(){
       axios.get(this.api)
@@ -50,7 +68,7 @@ export default {
           }
         });
 
-        this.$emit('Generi',this.listaGeneri)
+        this.$emit('generi',this.listaGeneri)
       });
     },
 
@@ -60,8 +78,7 @@ export default {
   },
   created(){
       this.getAlbum();
-      console.log(this.listaGeneri)
-      
+      console.log(this.listaGeneri)  
   }
   
 }
