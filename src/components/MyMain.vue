@@ -11,6 +11,7 @@
 
     </div>
 
+    <PageLoad v-if="loadingInProgress"/>
   </main>
 </template>
 
@@ -19,24 +20,27 @@
 const axios = require('axios');
 
 import CoverAlbum from './partials/CoverAlbum.vue'
+import PageLoad from './PageLoad.vue'
 
 export default {
   name: 'MyMain',
   data(){
     return{
       listaAlbum: [],
+      loadingInProgress: true,
       api: "https://flynn.boolean.careers/exercises/api/array/music"
     }
   },
   components:{
     CoverAlbum,
+    PageLoad
   },
   methods:{
     getAlbum(){
       axios.get(this.api)
       .then((response) => {
         this.listaAlbum = response.data.response;
-        console.log(this.listaAlbum);
+        this.loadingInProgress = false;
       });
     }
   },
