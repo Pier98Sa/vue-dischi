@@ -39,11 +39,9 @@ export default {
       height: 80px;
     }
 
-    
-  }
-
-  .ms_input{
+    .ms_input{
     width: 200px;
+    }
   }
 
 </style>

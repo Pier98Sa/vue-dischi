@@ -30,7 +30,6 @@ export default {
   data(){
     return{
       listaAlbum: [],
-      listaFiltrata: [],
       listaGeneri: [],
       loadingInProgress: true,
       api: "https://flynn.boolean.careers/exercises/api/array/music"
@@ -46,13 +45,11 @@ export default {
         return this.listaAlbum;
       }else {
         return this.listaAlbum.filter((elemento) =>{
-          if(elemento.genre == this.genere){
-           return this.listaFiltrata.push(elemento);
-          }
+          return elemento.genre == this.genere; 
         });
       } 
    },
-},
+  },
 
   methods:{
     getAlbum(){
