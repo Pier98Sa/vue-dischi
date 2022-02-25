@@ -4,10 +4,8 @@
     
     <select class="form-select me-2 ms_input" name="genresSelect" id="Album-Select" 
     v-model="selected" @change="$emit('genreSelected',selected)">
-      <option 
-      v-for="(selezione, index) in selezioni" :key = index 
-      
-      :value="selezione">
+      <option value="">Select genre </option>
+      <option v-for="(selezione, index) in selezioni" :key = index :value="selezione">
         {{selezione}}
       </option>
     </select>
@@ -22,7 +20,7 @@ export default {
   },
   data(){
     return{
-      selected:"Select genre",
+      selected:"",
     }
   }
   

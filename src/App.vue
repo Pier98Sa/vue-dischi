@@ -14,7 +14,7 @@ export default {
   data (){
     return {
       arraygeneri:[],
-      genereSelezionato:"Select genre",
+      genereSelezionato:"",
     }
   },
   components: {

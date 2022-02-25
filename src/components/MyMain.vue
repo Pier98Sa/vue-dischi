@@ -31,7 +31,7 @@ export default {
     return{
       listaAlbum: [],
       listaFiltrata: [],
-      listaGeneri: ["Select genre"],
+      listaGeneri: [],
       loadingInProgress: true,
       api: "https://flynn.boolean.careers/exercises/api/array/music"
     }
@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     listaAlbumFiltrati(){
-      if(this.genere == "Select genre"){
+      if(this.genere == ""){
         return this.listaAlbum;
       }else {
         return this.listaAlbum.filter((elemento) =>{
