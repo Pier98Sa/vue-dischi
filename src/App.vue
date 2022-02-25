@@ -25,11 +25,9 @@ export default {
   methods:{
     generazioneSelect(generi){
       this.arraygeneri = generi;
-      console.log(this.arraygeneri);
     },
     genre(select){
       this.genereSelezionato = select;
-      console.log("mi trovo nel app e ho la select" + this.genereSelezionato);
     }
   }
 }

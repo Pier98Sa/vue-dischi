@@ -77,8 +77,7 @@ export default {
    
   },
   created(){
-      this.getAlbum();
-      console.log(this.listaGeneri)  
+    this.getAlbum();
   }
   
 }
